@@ -1,7 +1,13 @@
+using Deployee.Extensions;
+using Deployee.Modules;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddModule(new DataModule(builder.Configuration));
+builder.Services.AddModule(new AuthModule());
 
 var app = builder.Build();
 
