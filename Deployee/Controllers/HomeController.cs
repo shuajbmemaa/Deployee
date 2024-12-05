@@ -1,3 +1,4 @@
+using AutoMapper;
 using Deployee.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -7,10 +8,12 @@ namespace Deployee.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IMapper _mapper;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IMapper mapper)
         {
             _logger = logger;
+            _mapper = mapper;
         }
 
         public IActionResult Index()

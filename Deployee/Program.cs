@@ -8,6 +8,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddModule(new DataModule(builder.Configuration));
 builder.Services.AddModule(new AuthModule());
+builder.Services.AddModule(new CoreModule(builder.Configuration));
+builder.Services.AddModule(new ValidationModule());
 
 var app = builder.Build();
 

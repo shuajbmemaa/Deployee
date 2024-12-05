@@ -1,4 +1,6 @@
-﻿namespace Deployee.Models;
+﻿using Deployee.Domain.Enums;
+
+namespace Deployee.Models;
 
 public class RegisterViewModel
 {
