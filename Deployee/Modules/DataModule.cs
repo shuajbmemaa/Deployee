@@ -1,4 +1,6 @@
-﻿using Deployee.Domain.Abstractions;
+﻿using Deployee.Application.Interfaces;
+using Deployee.Application.Services;
+using Deployee.Domain.Abstractions;
 using Deployee.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -29,6 +31,8 @@ public class DataModule : IModule
                 .UseSqlServer(connectionString)
                 .AddInterceptors(new SoftDeleteInterceptor())
         );
+
+        services.AddScoped<IIdentityService, IdentityService>();
     }
     }
 
