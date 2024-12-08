@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Deployee.Domain.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Deployee.Domain.Entities;
 
-public class User : IdentityUser
+public class User : IdentityUser, ISoftDeletion
 {
     public string FirstName { get; set; }
 
