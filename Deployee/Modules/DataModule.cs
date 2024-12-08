@@ -1,7 +1,9 @@
 ﻿using Deployee.Application.Interfaces;
 using Deployee.Application.Services;
 using Deployee.Domain.Abstractions;
+using Deployee.Domain.Interfaces;
 using Deployee.Infrastructure.Data;
+using Deployee.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Configuration;
@@ -33,6 +35,7 @@ public class DataModule : IModule
         );
 
         services.AddScoped<IIdentityService, IdentityService>();
+        services.AddScoped<IDepartmentRepository, DepartmentRepository>();
     }
     }
 
