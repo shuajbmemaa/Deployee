@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Deployee.Application.Models.Identity;
+using Deployee.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +10,9 @@ namespace Deployee.Application.Interfaces;
 
 public interface IIdentityService
 {
+    Task<Result<bool>> RegisterAsync(RegisterRequestt request);
 
-    //Task<Result<bool>> RegisterAsync(RegisterRequest request);
-
-
-    //Task<Result<bool>> LoginAsync(LoginRequest request);
-
+    Task<Result<bool>> LoginAsync(LoginRequestt request);
 
     Task LogoutAsync();
 }
