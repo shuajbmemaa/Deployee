@@ -36,6 +36,7 @@ public class DataModule : IModule
 
         services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+        services.AddScoped<IUserAccessor, UserAccessor>();
     }
     }
 

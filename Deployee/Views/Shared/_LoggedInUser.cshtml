@@ -1,0 +1,49 @@
+﻿@inject Deployee.Application.Interfaces.IUserAccessor UserAccessor
+
+@if (UserAccessor.IsUserAuthenticated())
+{
+        <li class="nav-item dropdown dropdown-slide">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="navbar-text custom-navbar-text">
+                    Hi, @UserAccessor.GetUserFirstName()
+                </span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item nav-link" asp-controller="Users" asp-action="Profile">
+                        <i class="fa fa-user p-2"></i> Account
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item nav-link" asp-controller="Users" asp-action="Logout">
+                        <i class="fa fa-sign-out p-2"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown" id="notification-dropdown">
+            <div>
+                <a class="nav-link dropdown-toggle bell" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bell"></i>
+                    <span class="badge badge-danger"  id="notification-count">0</span>
+                </a>
+            </div>
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" id="notification-menu">
+                <h6 class="dropdown-header">Notifications</h6>
+                <div id="notification-list">
+                </div>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-center" href="#">View all notifications</a>
+            </div>
+        </li>
+}
+else
+{
+        <li class="nav-item">
+            <a class="nav-link login-button" asp-controller="Users" asp-action="Login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white add-button" asp-controller="Users" asp-action="Register">Register</a>
+        </li>
+}
