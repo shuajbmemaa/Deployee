@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Deployee.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,5 @@ public class ApplicationMappingProfiles : Profile
 {
     public ApplicationMappingProfiles()
     {
-
     }
 }

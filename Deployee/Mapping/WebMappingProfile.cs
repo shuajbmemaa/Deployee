@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Deployee.Domain.Entities;
+using Deployee.Models;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
 using System.Diagnostics.Metrics;
 using System.Net;
@@ -9,7 +11,7 @@ public class WebMappingProfile : Profile
 {
     public WebMappingProfile()
     {
-
+        CreateMap<Department, DepartmentViewModel>();
     }
 }
 
